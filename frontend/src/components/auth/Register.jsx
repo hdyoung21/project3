@@ -1,5 +1,8 @@
-import React from 'react'
-import classes from './AuthForm.css';
+import axios from 'axios';
+import React from 'react';
+import toast from 'react-hot-toast';
+
+import classes from './AuthForm.module.scss';
 
 
 function register() {

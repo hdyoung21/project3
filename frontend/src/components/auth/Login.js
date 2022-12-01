@@ -1,7 +1,7 @@
 import React from 'react'
-import classes from './AuthForm.css';
 import { useNavigate } from 'react-router-dom'
 import classes from './AuthForm.module.scss';
+import axios from 'axios';
 
 function Login() {
     const navigate = useNavigate();
@@ -19,7 +19,6 @@ function Login() {
         }
         catch (err) {
             console.log(err);
-            toast.error('Login Failed');
         }
     };
 

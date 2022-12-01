@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import classes from './Navbar.css';
+import React, { useState, useEffect } from 'react';
+import classes from './Navbar.module.scss';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { toast } from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function Navbar() {
@@ -28,7 +27,6 @@ function Navbar() {
         try{
             await axios.get('/api/auth/logout');
             setUser(null);
-            toast.success('User Logged Out');
             navigate('/auth')
         }
         catch(err) {
@@ -52,7 +50,7 @@ function Navbar() {
                 <button type='button' className={classes.logout} onClick={handleLogout}>Logout</button>
             </nav>
         </header>
-    )
+    );
 }
 
-export default Navbar
+export default Navbar;

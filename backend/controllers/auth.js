@@ -54,3 +54,30 @@ export const login = async (req, res) => {
         return res.json('server error')
     }
 };
+
+export const register = async (req, res, next) => {
+    if (!req.body.name || !req.body.email || !req.body.password) {
+      return next(
+        createError({
+          message: 'Name, Email & password are required',
+          statusCode: 400,
+        }),
+      );
+    }
+  
+    try {
+      const salt = await bcryptjs.genSalt(10);
+      const hashedPassword = await bcryptjs.hash(req.body.password, salt);
+  
+      const newUser = new User({
+        name: req.body.name,
+        email: req.body.email,
+        password: hashedPassword,
+      });
+  
+      await newUser.save();
+      return res.status(201).json('New User Created');
+    } catch (err) {
+      return next(err);
+    }
+  };

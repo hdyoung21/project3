@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 
-
 import classes from './AuthForm.module.scss';
 
 
@@ -20,7 +19,7 @@ function Register() {
         catch (err) {
             console.log(err);
         }
-    }
+    };
   return (
     <div className={classes.register}>
         <h1 className={classes.title}>Register</h1>
@@ -31,7 +30,7 @@ function Register() {
             </label>
             <label htmlFor='email'>
                 Email
-                <input type="emial" name='email' placeholder='email' required />
+                <input type="email" name='email' placeholder='email' required />
             </label>
             <label htmlFor='password'>
                 password

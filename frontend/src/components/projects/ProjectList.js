@@ -1,10 +1,11 @@
 import axios from 'axios';
-import React, { useState, useInsertionEffect } from 'react';
+import React, { useState, useInsertionEffect, useEffect } from 'react';
 import ProjectItem from './ProjectItem.js';
 import './ProjectList.css';
 
 function ProjectList() {
-    const [ProjectList, setProjctList] = useState([]);
+    const [ProjectList, setProjectList] = useState([]);
+    const [isAddingNew, setIsAddingNew] || 
 
     const getProjects = async () => {
         try{
@@ -17,14 +18,14 @@ function ProjectList() {
         }
     };
 
-    useInsertionEffect(() => {
+    useEffect(() => {
         getProjects();
     }, []);
 
     const deleteProject = async (id) => {
         try{
             await axios.delete(`/api/projects/${id}`);
-            setProjctList(ProjectList.filter((project) => project._id !== id));
+            setProjectList(ProjectList.filter((project) => project._id !== id));
         } catch (err) {
             console.log(err);
         }

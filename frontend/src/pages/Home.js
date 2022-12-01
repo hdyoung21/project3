@@ -8,6 +8,7 @@ function Home() {
     <Layout>
       <Navbar />
     </Layout>
+  )
 }
 
 export default Home;

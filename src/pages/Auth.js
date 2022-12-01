@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Login from '../components/auth/Login.js';
-import Register from '../components/auth/Register.js';
+import Register from '../components/auth/Register.js.js';
 import Layout from '../components/Layout.js';
 import useAuth from '../hooks/useAuth.js';
 import classes from './Auth.module.scss';

@@ -34,7 +34,7 @@ const userSchema = new Schema ({
     //     //could ask for the link but i think it would be better if it was just the username
     // }, 
     id: {
-        type: DataTypes.INTEGER, 
+        type: String, 
         allowNull: false, 
         primaryKey: true,
         autoIncrement: true

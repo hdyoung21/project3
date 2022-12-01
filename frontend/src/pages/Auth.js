@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Login from '../components/auth/Login';
-import Register from '../components/auth/Register';
-import Layout from '../components/Layout';
-import useAuth from '../hooks/useAuth';
+import Login from '../components/auth/Login.js';
+import Register from '../components/auth/Register.js';
+import Layout from '../components/Layout.js';
+import useAuth from '../hooks/useAuth.js';
 import classes from './Auth.module.scss';
 
 function Auth() {

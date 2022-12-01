@@ -1,11 +1,11 @@
 import axios from 'axios';
 import React from 'react';
-import toast from 'react-hot-toast';
+
 
 import classes from './AuthForm.module.scss';
 
 
-function register() {
+function Register() {
     const register = async (e) => {
         e.preventDefault();
         const user = {
@@ -16,11 +16,9 @@ function register() {
 
         try {
             await axios.post('/api/auth/register', user);
-            toast.success('Register Successful');
         } 
         catch (err) {
             console.log(err);
-            toast.error('Register Failed');
         }
     }
   return (
@@ -44,7 +42,7 @@ function register() {
 
         </form>
     </div>
-  )
+  );
 }
 
-export default register
+export default Register;

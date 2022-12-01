@@ -1,6 +1,10 @@
 import React from 'react'
+<<<<<<< HEAD:frontend/src/components/auth/Login.js
 import classes from './AuthForm.css';
 import { useNavigate } from 'react-router-dom'
+=======
+import classes from './AuthForm.module.scss';
+>>>>>>> bf677acfb8be807c0f295262324fe41588aa32f1:frontend/src/components/auth/Login.jsx
 
 function Login() {
     const navigate = useNavigate();

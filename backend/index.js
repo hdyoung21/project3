@@ -19,6 +19,12 @@ app.use(cookieParser());//to work with cookies
 
 //routes
 app.use('/api', allRoutes);//entry point
+app.use((err, req, res) => {
+    const status = err.statusCode || 500;
+    const message = err.message || 'Internal Server Error';
+
+    return res.status(status).json({message, stack: err.stack})
+})
 
 const connectDB = async () => {
     try{

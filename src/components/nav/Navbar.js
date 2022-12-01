@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Navbar.css'
+import classes from './Navbar.module.scss';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ function Navbar() {
     const getUser = async () => {
         try {
             const { data } = await axios.get('/api/users/me');
-            setUser(data);
+            setUser(data)
         }
         catch (err) {
             console.log(err);
@@ -20,13 +20,14 @@ function Navbar() {
 
     useEffect(() => {
         getUser();
-    }, []);
+
+    }, [])
 
     const handleLogout = async () => {
         try{
             await axios.get('/api/auth/logout');
             setUser(null);
-            navigate('/auth');
+            navigate('/auth')
         }
         catch(err) {
             console.log(err);
@@ -37,16 +38,16 @@ function Navbar() {
 
     return (
         <header>
-            <div className="userInfo">
+            <div className={classes.userInfo}>
 
                 <div>
-                    <h1 className="name">{user.name}</h1>
-                    <h1 className="email">{user.email}</h1>
-                    <Link to='/edit-profile' className="editBtn">Edit</Link>
+                    <h1 className={classes.name}>{user.name}</h1>
+                    <h1 className={classes.email}>{user.email}</h1>
+                    <link to='/edit-profile' className={classes.editBtn}>Edit</link>
                 </div>
             </div>
             <nav>
-                <button type='button' className="logout" onClick={handleLogout}>Logout</button>
+                <button type='button' className={classes.logout} onClick={handleLogout}>Logout</button>
             </nav>
         </header>
     );

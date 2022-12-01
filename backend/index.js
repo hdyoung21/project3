@@ -18,7 +18,7 @@ app.use(express.json());//to work with JSON files
 app.use(cookieParser());//to work with cookies
 
 //routes
-app.use('/api', allRoutes);
+app.use('/api', allRoutes);//entry point
 
 const connectDB = async () => {
     try{

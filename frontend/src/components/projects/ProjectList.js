@@ -5,6 +5,7 @@ import './ProjectList.css';
 
 function ProjectList() {
     const [ProjectList, setProjectList] = useState([]);
+
     const [isAddingNew, setIsAddingNew] = useState(false);
     const [newProject, setNewProject] = useState('');
 
@@ -16,6 +17,7 @@ function ProjectList() {
         );
     }catch (err) {
         console.log(err);
+
         }
     };
 
@@ -44,6 +46,7 @@ function ProjectList() {
             console.log(err);
         }
     }
+
     const deleteProject = async (id) => {
         try{
             await axios.delete(`/api/projects/${id}`);
@@ -58,12 +61,14 @@ function ProjectList() {
         <div className="topBar">
             <button type='button' className="addNew">Add New</button>
         </div>
+
         {isAddingNew && (
             <form className="addNewForm" onSubmit={addNewProject}>
                 <input type="text" value={newProject} onChange={(e) => setNewProject(e.target.value)} placeholder="Project Name" />
                 <button type="submit">Add</button>
             </form>
         )}
+
         {ProjectList.length > 0 ? (
             <table className="projectList_table" >
                 <tbody>

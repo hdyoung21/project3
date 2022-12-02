@@ -3,14 +3,12 @@ import User from '../models/user.js';
 import jwt from 'jsonwebtoken';
 import createError from '../utils/createError.js';
 
-<<<<<<< HEAD
-export const register = async (req, res) => {
-if(!req.body.name || !req.body.email || !req.body.password) {
-    return res.json('Please fill in all of the inputs');
-}
 
-try{
-=======
+// export const register = async (req, res) => {
+// if(!req.body.name || !req.body.email || !req.body.password) {
+//     return res.json('Please fill in all of the inputs');
+// }
+
 export const login = async (req, res, next) => {
 if(!req.body.email || !req.body.password) {
     return next(
@@ -68,7 +66,7 @@ export const register = async (req, res, next) => {
   }
 
   try {
->>>>>>> window
+
     const salt = await bcryptjs.genSalt(10);
     const hashedPassword = await bcryptjs.hash(req.body.password, salt);
 

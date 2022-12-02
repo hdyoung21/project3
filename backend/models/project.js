@@ -42,12 +42,12 @@ const projectSchema = new Schema (
         ref: 'User', 
         required: [true, 'Please provide user.'],
     },
-    id: {
-        type: DataTypes.INTEGER, 
-        allowNull: false, 
-        primaryKey: true,
-        autoIncrement: true
-      },
+    // id: {
+    //     type: DataTypes.INTEGER, 
+    //     allowNull: false, 
+    //     primaryKey: true,
+    //     autoIncrement: true
+    //   },
 }, 
 {timestamps: true}
     

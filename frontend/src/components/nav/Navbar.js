@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import classes from './Navbar.module.scss';
+import './Navbar.css';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -38,16 +38,16 @@ function Navbar() {
 
     return (
         <header>
-            <div className={classes.userInfo}>
+            <div className="userInfo">
 
                 <div>
-                    <h1 className={classes.name}>{user.name}</h1>
-                    <h1 className={classes.email}>{user.email}</h1>
-                    <link to='/edit-profile' className={classes.editBtn}>Edit</link>
+                    <h1 className="name">{user.name}</h1>
+                    <h1 className="email">{user.email}</h1>
+                    <link to='/edit-profile' className="editBtn">Edit</link>
                 </div>
             </div>
             <nav>
-                <button type='button' className={classes.logout} onClick={handleLogout}>Logout</button>
+                <button type='button' className="logout" onClick={handleLogout}>Logout</button>
             </nav>
         </header>
     );

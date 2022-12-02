@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import classes from './AuthForm.module.scss';
+import  './AuthForm.css';
 import axios from 'axios';
 
 function Login() {
@@ -24,11 +24,11 @@ function Login() {
 
 
     return (
-        <div className={classes.register}>
-            <h1 className={classes.title}>
+        <div className="register">
+            <h1 className="title">
                 Login
             </h1>
-            <form className={classes.authForm} onSubmit={login}>
+            <form className="authForm" onSubmit={login}>
                 <label htmlFor='email'>
                     Email
                     <input type="email" name="email" placeholder="email" required />

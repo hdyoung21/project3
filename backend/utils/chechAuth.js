@@ -1,4 +1,4 @@
-import createError from './error.js';
+import createError from './createError.js';
 import jwt from "jsonwebtoken";
 
 export const checkAuth = (req, res, next) => {

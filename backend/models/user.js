@@ -1,8 +1,8 @@
-import mongoose from "mongoose";
+ import mongoose from 'mongoose';
 
 const { Schema } = mongoose;
 
-const userSchema = new Schema ({
+const userSchema = new Schema({
     name: {
         type: String, 
         required: [true, 'Please provide your first name.'], 
@@ -33,12 +33,12 @@ const userSchema = new Schema ({
     //     required: [true, 'Please provide your github username.']
     //     //could ask for the link but i think it would be better if it was just the username
     // }, 
-    id: {
-        type: String, 
-        allowNull: false, 
-        primaryKey: true,
-        autoIncrement: true
-      },
+    // id: {
+    //     type: String, 
+    //     allowNull: false, 
+    //     primaryKey: true,
+    //     autoIncrement: true
+    //   },
 });
 
 export default mongoose.model('User', userSchema);

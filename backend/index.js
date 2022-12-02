@@ -4,7 +4,7 @@ import 'dotenv/config';
 import cors from 'cors';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
-import allRoutes from './backend/routes/index.js';
+import allRoutes from './routes/index.js';
 
 
 const PORT = process.env.PORT || 3001;

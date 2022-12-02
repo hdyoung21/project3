@@ -3,6 +3,7 @@ import User from '../models/user.js';
 import jwt from 'jsonwebtoken';
 import createError from '../utils/createError.js';
 
+
 export const login = async (req, res, next) => {
 if(!req.body.email || !req.body.password) {
     return next(

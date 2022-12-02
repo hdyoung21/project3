@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState, useInsertionEffect, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProjectItem from './ProjectItem.js';
 import './ProjectList.css';
 
@@ -41,7 +41,7 @@ function ProjectList() {
             });
             setIsAddingNew('New project added');
             setNewProject('');
-            setProjectList([{ ... data }, ...ProjectList]);
+            setProjectList([{ ...data }, ...ProjectList]);
         } catch (err) {
             console.log(err);
         }

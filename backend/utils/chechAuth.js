@@ -1,7 +1,7 @@
 import createError from './error.js';
 import jwt from "jsonwebtoken";
 
-export default (req, res, next) => {
+export const checkAuth = (req, res, next) => {
     const token = req.cookies.access_token;
     if(!token){
         return next(createError({ status: 401, message: "Please sign in."}))

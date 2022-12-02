@@ -6,8 +6,9 @@ import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import allRoutes from './backend/routes/index.js';
 
-const app = express();
+
 const PORT = process.env.PORT || 3000;
+const app = express();
 
 
 //middleware
@@ -19,11 +20,11 @@ app.use(cookieParser());//to work with cookies
 //routes
 app.use('/api', allRoutes);//entry point
 app.use((err, req, res) => {
-    // const status = err.statusCode || 500;
+    const status = err.statusCode || 500;
     const message = err.message || 'Internal Server Error';
 
-    return res.status(500).json({message, stack: err.stack});
-});
+    return res.status(status).json({message, stack: err.stack})
+})
 
 const connectDB = async () => {
     try{
@@ -39,4 +40,4 @@ const connectDB = async () => {
 app.listen(PORT, () => {
     connectDB();
     console.log(`Server is running on port ${PORT}`);
-});
+})

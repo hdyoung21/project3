@@ -4,7 +4,7 @@ import Login from '../components/auth/Login.js';
 import Register from '../components/auth/Register.js';
 import Layout from '../components/Layout.js';
 import useAuth from '../hooks/useAuth.js';
-import classes from './Auth.module.scss';
+import './Auth.css';
 
 function Auth() {
   const { auth } = useAuth();
@@ -18,7 +18,7 @@ function Auth() {
 
   return (
     <Layout>
-      <div className={classes.form_container}>
+      <div className="form_container">
         <Login />
         <Register />
       </div>

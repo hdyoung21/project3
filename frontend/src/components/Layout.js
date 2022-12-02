@@ -1,9 +1,9 @@
 import React from 'react';
-import classes from './Layout.module.scss';
+import './Layout.css';
 
 function Layout({children}) {
   return (
-    <main className={classes.containter}>{children}</main>
+    <main className="container">{children}</main>
   );
 }
 

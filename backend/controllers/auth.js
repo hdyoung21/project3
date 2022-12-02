@@ -2,10 +2,10 @@ import bcryptjs from 'bcryptjs';
 import User from '../models/user.js';
 import jwt from 'jsonwebtoken';
 
-export const register = async (req, res) => {
-if(!req.body.name || !req.body.email || !req.body.password) {
-    return res.json('Please fill in all of the inputs');
-}
+// export const register = async (req, res) => {
+// if(!req.body.name || !req.body.email || !req.body.password) {
+//     return res.json('Please fill in all of the inputs');
+// }
 
 try{
     const salt = await bcryptjs.genSalt(10);

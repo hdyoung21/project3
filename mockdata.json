@@ -1,0 +1,4 @@
+[{"title":"Bootcamp","status":"Finished","company":"GT","codingLanguage":"MERN","projectDescription":"We are done!","user":"Hunter","id":"1"},
+{"title":"FishingApp","status":"To-Do","company":"Mongofishing","codingLanguage":"JS","projectDescription":"build fishing site","user":"Troy","id":"2"},
+{"title":"Naruto","status":"In-Progress","company":"Crunchyroll","codingLanguage":"WEEB","projectDescription":"Dont watch boruto its awful","user":"pikachu","id":"3"},
+{"title":"Wendys cooking class","status":"Finished","company":"","codingLanguage":"Love","projectDescription":"crepes are delicous","user":"Wendy","id":"4"}]

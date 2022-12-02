@@ -1,6 +1,7 @@
 import bcryptjs from 'bcryptjs';
 import User from '../models/user.js';
 import jwt from 'jsonwebtoken';
+import createError from '../utils/createError.js';
 
 export const login = async (req, res, next) => {
 if(!req.body.email || !req.body.password) {
@@ -9,10 +10,10 @@ if(!req.body.email || !req.body.password) {
             message: "Both fields are required.",
             statusCode: 400,
         }),
-    );
-}
+    );  
+  }
 
-try {
+  try {
     const user = await User.findOne({ email: req.body.email }).select(
       'name email password',
     );

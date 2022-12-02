@@ -1,4 +1,4 @@
-import createError from './error.js';
+import createError from './createError.js';
 import jwt from "jsonwebtoken";
 
 export default (req, res, next) => {

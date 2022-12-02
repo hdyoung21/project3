@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 
-import classes from './AuthForm.module.scss';
+import './AuthForm.css';
 
 
 function Register() {
@@ -21,9 +21,9 @@ function Register() {
         }
     };
   return (
-    <div className={classes.register}>
-        <h1 className={classes.title}>Register</h1>
-        <form className={classes.authForm} onSubmit={register}>
+    <div className="register">
+        <h1 className="title">Register</h1>
+        <form className="authForm" onSubmit={register}>
             <label htmlFor='name'>
                 Name
                 <input type="text" name='name' placeholder='Full Name' required />
